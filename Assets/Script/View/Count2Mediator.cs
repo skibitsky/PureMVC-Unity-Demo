@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using PureMVC.Interfaces;
+using System.Linq;
+using UnityPureMVC.Interfaces;
 
-public class Count2Mediator : PureMVC.Patterns.Mediator {
+public class Count2Mediator : UnityPureMVC.Patterns.Mediator {
 
 	public new const string NAME = "Count2Mediator";
 
@@ -15,11 +16,11 @@ public class Count2Mediator : PureMVC.Patterns.Mediator {
 	//IMediatorPlug needs
 	public Count2Mediator(string mediatorName, object viewComponent ):base(mediatorName, viewComponent ) {}
 
-	public override IList<string> ListNotificationInterests()
+	public override string[] ListNotificationInterests()
 	{
 		IList<string> list = new List<string>();
 		list.Add(Count2Proxy.UPDATED);
-		return list;
+		return list.ToArray();
 	}
 
 	public override void HandleNotification(INotification notification)

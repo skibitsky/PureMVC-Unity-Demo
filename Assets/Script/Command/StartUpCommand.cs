@@ -2,9 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class StartUpCommand : PureMVC.Patterns.SimpleCommand {
+public class StartUpCommand : UnityPureMVC.Patterns.SimpleCommand {
 
-	public override void Execute(PureMVC.Interfaces.INotification notification)
+	public override void Execute(UnityPureMVC.Interfaces.INotification notification)
 	{
 		Debug.Log("Execute StartUpCommand");
 		//Register default proxies and commands

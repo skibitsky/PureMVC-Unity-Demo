@@ -1,21 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using PureMVC.Interfaces;
+using UnityPureMVC.Interfaces;
 using System;
 
-public class UnityFacade : PureMVC.Patterns.Facade {
+public class UnityFacade : UnityPureMVC.Patterns.Facade {
 
 	public const string STARTUP = "UnityFacade.StartUp";
 
 	static UnityFacade()
 	{
-		m_instance = new UnityFacade();
+		Instance = new UnityFacade();
     }
 	 
 	// Override Singleton Factory method 
 	public static UnityFacade GetInstance() {
-		return m_instance as UnityFacade;
+		return Instance as UnityFacade;
 	}
 
 	protected override void InitializeController() {

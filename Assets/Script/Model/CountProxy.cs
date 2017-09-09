@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CountProxy : PureMVC.Patterns.Proxy {
+public class CountProxy : UnityPureMVC.Patterns.Proxy {
 
 	public const string NAME = "CountProxy";
 	public const string UPDATED = "CountProxy.Updated";
@@ -31,6 +31,6 @@ public class CountProxy : PureMVC.Patterns.Proxy {
 
 	public void Add(){
 		m_count ++;
-		SendNotification( UPDATED );
+		SendNotification( UPDATED, null, null );
 	}
 }
